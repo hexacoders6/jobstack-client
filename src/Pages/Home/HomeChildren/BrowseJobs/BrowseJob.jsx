@@ -4,10 +4,10 @@ import {FaBookmark, FaRegAddressCard} from 'react-icons/fa';
 import { TfiEmail } from "react-icons/tfi";
 const BrowseJob = () => {
     return (
-        <div className='p-20 mb-10 max-w-screen-xl px-5 mx-auto'>
+        <div className='lg:p-12 mb-6 max-w-screen-xl px-5 mx-auto'>
          <div className='grid md:grid-cols-2 gap-5'>
             <div className='space-y-4'>
-                <h1 className='text-5xl font-bold'>Suits Jobs For You.</h1>
+                <h1 className='lg:text-5xl text-3xl mt-6 font-bold'>Suits Jobs For You.</h1>
                <div className='border borderl'>
                <p className='pl-3 text-lg text-gray-400'>There are many variations of passages of Lorem Ipsum Fasts Fastsby humour, by injected humour, or coved ceilings.</p>
                </div>
@@ -32,8 +32,8 @@ const BrowseJob = () => {
                </div>
             </div>
             <div>
-               <div>
-               <img src={Img} alt="" />
+               <div className='mt-8'>
+               <img  src={Img} alt="" />
                </div>
             </div>
         </div>

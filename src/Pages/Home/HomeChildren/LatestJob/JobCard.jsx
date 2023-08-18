@@ -5,7 +5,7 @@ import apple from '../../../../assets/Jobs/apple.png'
 
 const JobCard = ({ image, title, company, Technology,address,price,time }) => {
   return (
-    <div className="md:w-6/12 h-44 job-card p-5 mt-5 md:mt-0">
+    <div className="md:w-6/12 lg:h-44 rounded-lg job-card lg:p-5 px-2 py-2 mt-5 md:mt-0">
       <div className="flex items-center">
         <div className="">
           <img className="h-20" src={image} alt="" />

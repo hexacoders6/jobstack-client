@@ -1,13 +1,20 @@
-import React, {useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo/logo.png";
 import { AuthContext } from "../../../Providers/AuthProvider";
-import { FaBell, FaHome, FaRegCommentDots, FaShoppingBag, FaUserAlt, FaUserFriends } from "react-icons/fa";
+import {
+  FaBell,
+  FaHome,
+  FaRegCommentDots,
+  FaShoppingBag,
+  FaUserAlt,
+  FaUserFriends,
+} from "react-icons/fa";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const { user, logOut } = useContext(AuthContext);
-  // user logout function 
+  // user logout function
   const handleLogOut = () => {
     logOut()
       .then((result) => {
@@ -19,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-white shadow sticky z-30 top-0 left-0">
       <div className="justify-between px-5 mx-auto lg:max-w-screen-xl md:items-center md:flex sticky ">
-        <div className="flex items-center justify-between py-3 md:py-5 md:block">
+        <div className="flex items-center justify-between py-3 md:py-4 md:block">
           <div className="flex gap-8 items-center">
             <div className="navbar-start ml-0">
               <Link to="/">
@@ -110,23 +117,36 @@ const Navbar = () => {
               </Link>
             </li>
 
-            {user ? <li>
-              <Link to="/myNetworks">
-                <FaUserFriends className="mx-auto"></FaUserFriends> My Networks
-              </Link>
-            </li> : ""}
+            {user ? (
+              <li>
+                <Link to="/myNetworks">
+                  <FaUserFriends className="mx-auto"></FaUserFriends> My
+                  Networks
+                </Link>
+              </li>
+            ) : (
+              ""
+            )}
 
-            {user ? <li>
-              <Link to="/jobs">
-                <FaShoppingBag s className="mx-auto"></FaShoppingBag> Jobs
-              </Link>
-            </li> : ""}
-           {user ?  <li>
-              <Link to="/messaging">
-                <FaRegCommentDots s className="mx-auto"></FaRegCommentDots>
-                Messaging
-              </Link>
-            </li> : ""}
+            {user ? (
+              <li>
+                <Link to="/jobs">
+                  <FaShoppingBag s className="mx-auto"></FaShoppingBag> Jobs
+                </Link>
+              </li>
+            ) : (
+              ""
+            )}
+            {user ? (
+              <li>
+                <Link to="/messaging">
+                  <FaRegCommentDots s className="mx-auto"></FaRegCommentDots>
+                  Messaging
+                </Link>
+              </li>
+            ) : (
+              ""
+            )}
             <li>
               <Link to="/notifications">
                 <FaBell className="mx-auto"></FaBell>
@@ -157,7 +177,7 @@ const Navbar = () => {
             </Link>
           ) : (
             <Link to="/login">
-              <button className=" mt-3 relative flex items-center justify-center text-lg mr-4 gap-2 px-5 py-2.5  bg-green-500 rounded-lg shadow-md transition-all hover:shadow-lg border-2 text-white hover:border-green-500">
+              <button className=" mt-1 relative flex items-center justify-center text-lg mr-4 gap-2 px-5 py-2.5  bg-green-500 rounded-lg shadow-md transition-all hover:shadow-lg border-2 text-white hover:border-green-500">
                 Login
               </button>
             </Link>

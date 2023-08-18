@@ -6,11 +6,13 @@ import Login from "../Pages/UserAuthentication/Login/Login";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import UserInfo from "../Pages/UserDetails/UserInfo/UserInfo";
 import UserOverView from "../Pages/UserDetails/UserOverView/UserOverView";
+import ErrorPage from "../Pages/Error/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "/",
